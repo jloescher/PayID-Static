@@ -1,0 +1,29 @@
+{
+  "name": "payid-static",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "DEBUG=payid-server node index.js",
+    "dev": "DEBUG=payid-server* node index.js",
+    "watch": "DEBUG=payid-server* nodemon index.js"
+  },
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "toml": "^3.0.0",
+    "xrpl-tagged-address-codec": "^0.2.1"
+  },
+  "devDependencies": {},
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WietseWind/PayID-Static.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WietseWind/PayID-Static/issues"
+  },
+  "homepage": "https://github.com/WietseWind/PayID-Static#readme",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
