@@ -29,7 +29,7 @@ The `redirect` parameter can be set globally to redirect all requests not contai
 
 ```
 # Optional, in case of a non-PayID request:
-redirect = "https://wietse.com/?noPayID"
+# redirect = "https://wietse.com/?noPayID"
 
 # The ["..."] sections contain the route
 
@@ -37,9 +37,12 @@ redirect = "https://wietse.com/?noPayID"
   account = "rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY"
   tag = 495
 
-["/wietse"]
+["/wietse/"]
   account = "XV5sbjUmgPpvXv4ixFWZ5ptAYZ6PD2q1qM6owqNbug8W6KV"
-  redirect = "https://google.com/?noPayID"
+  redirect = "https://xrpl-labs.com/?noPayID"
+
+["/w"]
+  account = "XVjKs2ae5EgCyKL4oPoNo7RoeBKFCbndk8gq6W6n93WeYZG"
 
 ["/pets/pepper"]
   account = "TVd2rqMkYL2AyS97NdELcpeiprNBjwVu8XCE7W73WEvzcB1"
@@ -48,7 +51,7 @@ redirect = "https://wietse.com/?noPayID"
   account = "rPdvC6ccq8hCdPKSPJkPmyZ4Mi1oG2FFkT"
   
 ["/pets/null"]
-  redirect = "https://vanderv1.nl/?noPayID=true"
+  redirect = "https://arwen.im/?noPayID=true"
 ```
 
 This sample is present in `config.sample.toml` as well, which will be the fallback file in case of a missing `config.toml` file.
