@@ -2,7 +2,7 @@
 
 Simple, self hosted PayID server, serving your own PayID's for the XRPL on your own domain.
 
-Run:
+### Run:
 
  - `npm run watch` (for development (more verbose) + live reload)
  - `npm run dev` (for development (more verbose))
@@ -10,6 +10,26 @@ Run:
 
 This package will start a webserver on port `8080` by default. Provide the `PORT` environment variabele to start
 the server on a different port, eg.: `PORT=3000 npm run watch`.
+
+### Run using Docker
+
+1. Build the image:  
+```
+docker build -t wietse/payid .
+```
+2. Run a container:  
+```
+docker run --rm -p 8080:8080 wietse/payid
+```
+
+Now you can call `localhost:8080`, eg. using `curl`:
+
+```
+curl --verbose \
+  -H 'Content-Type: application/json' \
+  -H "Accept: application/xrpl-mainnet+json" \
+  http://localhost:8080
+```
 
 ### Browser requests (static content serving) 
 When the server receives a request without a valid PayID header (presumably requested by a webbrowser), the `public_html` folder will be served. If the requested path/file is not found in the `public_html` folder and the root path is called, `index.html` will be served.
