@@ -46,7 +46,7 @@ const Read = (file) => {
           }
           
           Object.assign(a, {
-            [route]: typeof parsed[b] === 'object'
+            [(route.substring(0, 1) === '/' ? '' : '/') + route]: typeof parsed[b] === 'object'
               ? Object.assign({}, parsed[b])
               : parsed[b]
           })

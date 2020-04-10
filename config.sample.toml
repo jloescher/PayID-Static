@@ -3,22 +3,28 @@
 
 # The ["..."] sections contain the route
 
-["/"]
+[""]
+  # $some.domain
   account = "rPEPPER7kfTD9w2To4CQk6UCfuHM9c6GDY"
   tag = 495
 
-["/wietse/"]
+["wietse"]
+  # wietse$some.domain
   account = "XV5sbjUmgPpvXv4ixFWZ5ptAYZ6PD2q1qM6owqNbug8W6KV"
   redirect = "https://xrpl-labs.com/?noPayID"
 
-["/w"]
+["w"]
+  # w$some.domain
   account = "XVjKs2ae5EgCyKL4oPoNo7RoeBKFCbndk8gq6W6n93WeYZG"
 
-["/pets/pepper"]
+["pets-pepper"]
+  # pets-pepper$some.domain
   account = "TVd2rqMkYL2AyS97NdELcpeiprNBjwVu8XCE7W73WEvzcB1"
 
-["/pets/dino"]
+["pets_dino"]
+  # pets_dino$some.domain
   account = "rPdvC6ccq8hCdPKSPJkPmyZ4Mi1oG2FFkT"
   
-["/pets/null"]
+["pets"]
+  # pets$some.domain
   redirect = "https://arwen.im/?noPayID=true"
