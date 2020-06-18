@@ -24,6 +24,11 @@ module.exports = (req, res, next) => {
     resolveInfo.isMainNet = Boolean(payIdAccept[1].match(/main|live/))
   }
 
+  if (!payIdAccept && usedHeaders.accept.match(/^application\/payid\+json/)) {
+    resolveInfo.isPayId = true
+    resolveInfo.isMainNet = true
+  }
+
   resolveInfo.matchingConfig = req.app.config[sanitizedPath] || null
 
   if (resolveInfo.isPayId && resolveInfo.matchingConfig !== null && typeof resolveInfo.matchingConfig.account === 'undefined') {
@@ -62,14 +67,21 @@ module.exports = (req, res, next) => {
       res.header('Content-Type', `application/xrpl-${net}+json; charset=utf-8`)
       log(`PayID response [ ${sanitizedPath} ] » ${resolveInfo.matchingConfig.account} @ ${net}`)
       return res.json({
-        addressDetailType: 'CryptoAddressDetails',
-        addressDetails: {
-          address: xTagged.Encode({
-            account: resolveInfo.matchingConfig.account,
-            tag: resolveInfo.matchingConfig.tag || null,
-            test: !resolveInfo.isMainNet
-          })
-        }
+        addresses: [
+          {
+            paymentNetwork: 'XRPL',
+            environment: net.toUpperCase(),
+            addressDetailsType: 'CryptoAddressDetails',
+            addressDetails: {
+              address: xTagged.Encode({
+                account: resolveInfo.matchingConfig.account,
+                tag: resolveInfo.matchingConfig.tag || null,
+                test: !resolveInfo.isMainNet
+              })
+            }
+          }
+        ],
+        payId: sanitizedPath.slice(1) + '$' + req.hostname
       })
     } else {
       log(`PayID 404 [ ${sanitizedPath} ] » @ ${net}`)
