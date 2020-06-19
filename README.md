@@ -2,6 +2,8 @@
 
 Simple, self hosted PayID server, serving your own PayID's for the XRPL on your own domain.
 
+## PLEASE NOTE! With STATIC I mean: the config. Static config. Not a database. The server (service) itself is still a node (nodejs) application. Easiest way to deploy is to eg. Heroku.
+
 ### Run:
 
  - `npm run watch` (for development (more verbose) + live reload)
