@@ -78,6 +78,13 @@ module.exports = (req, res, next) => {
                 tag: resolveInfo.matchingConfig.tag || null,
                 test: !resolveInfo.isMainNet
               })
+            },
+            details: {
+              address: xTagged.Encode({
+                account: resolveInfo.matchingConfig.account,
+                tag: resolveInfo.matchingConfig.tag || null,
+                test: !resolveInfo.isMainNet
+              })
             }
           }
         ],
