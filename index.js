@@ -17,7 +17,7 @@ app.disable('x-powered-by')
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET')
-  res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept')
+  res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, PayID-Version, PayID-API-Version')
   next()
 })
 
