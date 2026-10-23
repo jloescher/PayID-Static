@@ -9,7 +9,7 @@
   "dependencies": {
     "concat-stream": "^2.0.0",
     "debug": "^4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.22.3",
     "nodemon": "^2.0.2",
     "toml": "^3.0.0",
     "xrpl-tagged-address-codec": "^0.2.1"
